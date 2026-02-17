@@ -22,11 +22,28 @@ public class Movimiento : MonoBehaviour
         //    vertical = 0;
         //}
 
+        if (horizontal == 1)
+        { 
+            this.gameObject.transform.rotation = Quaternion.Euler(0, 0, -90);
+        }
+        if (horizontal == -1)
+        {
+            this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 90);
+        }
+        if (vertical == 1)
+        {
+            this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        if (vertical == -1)
+        {
+            this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 180);
+        }
         movement = new Vector2(horizontal, vertical);
     }
 
     void FixedUpdate()
     {
+        movement = movement.normalized;
         rb.linearVelocity = movement * speed;
     }
 }
