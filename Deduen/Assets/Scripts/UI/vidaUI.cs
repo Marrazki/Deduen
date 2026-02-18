@@ -19,11 +19,11 @@ public class vidaUI : MonoBehaviour
         }
 
         // Mostrar valor inicial
-        textoUI.text = "Vida(ps): " + playerData.vida;
     }
 
     void Update()
     {
+        textoUI.text = "Vida(ps): " + playerData.vida;
 
     }
 }
