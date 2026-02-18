@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CanvasInventario : MonoBehaviour
+public class CanvasSombrero : MonoBehaviour
 {
     public CanvasGroup canvasGroup;
     private bool abierto = false;

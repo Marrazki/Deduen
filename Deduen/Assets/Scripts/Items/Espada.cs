@@ -2,6 +2,7 @@
 
 public class Espada : Item
 {
+    public Animator animator; // Referencia al Animator para reproducir la animación de ataque
     private void Start()
     {
         daño = 5;
@@ -20,5 +21,14 @@ public class Espada : Item
         Gizmos.color = Color.blue;
         Gizmos.DrawLine(transform.parent.position,
             transform.parent.position + transform.up * rango);
+    }
+    protected override void Ataque()
+    {
+        // Reproducir animación
+        if (animator != null)
+            animator.SetTrigger("Ataque");
+
+        // Ejecutar lógica de daño del padre
+        base.Ataque();
     }
 }

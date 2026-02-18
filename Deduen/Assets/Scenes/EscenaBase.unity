@@ -119,6 +119,60 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &107675418
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 107675420}
+  - component: {fileID: 107675419}
+  m_Layer: 0
+  m_Name: AnimController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!95 &107675419
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107675418}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 01b25af4f4858bf44b57d66ad4bfae9e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!4 &107675420
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107675418}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.036106, y: 0.7102231, z: 0.031272013}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &121283993
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,6 +323,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3657671828649854814, guid: d2e83d593db76ea43991e3ba75d5e8f2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 855262626}
+    - targetCorrespondingSourceObject: {fileID: 3657671828649854814, guid: d2e83d593db76ea43991e3ba75d5e8f2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 855262628}
   m_SourcePrefab: {fileID: 100100000, guid: d2e83d593db76ea43991e3ba75d5e8f2, type: 3}
 --- !u!1 &210806853
 GameObject:
@@ -526,7 +583,7 @@ GameObject:
   - component: {fileID: 324415861}
   - component: {fileID: 324415860}
   m_Layer: 5
-  m_Name: CanvasInventario
+  m_Name: CanvasSombrero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1589,6 +1646,29 @@ MonoBehaviour:
   capaEnemigos:
     serializedVersion: 2
     m_Bits: 8
+  animator: {fileID: 855262628}
+--- !u!95 &855262628
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855262622}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 01b25af4f4858bf44b57d66ad4bfae9e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1113417258
 GameObject:
   m_ObjectHideFlags: 0
@@ -2298,3 +2378,4 @@ SceneRoots:
   - {fileID: 1135104937}
   - {fileID: 320061154}
   - {fileID: 324415859}
+  - {fileID: 107675420}
