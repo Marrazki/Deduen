@@ -15,4 +15,12 @@ public class Inventario : MonoBehaviour
     {
         
     }
+    public void CogerItem(Item item)
+    { 
+        
+    }
+    public void TirarItem(Item item)
+    { 
+        
+    }
 }
