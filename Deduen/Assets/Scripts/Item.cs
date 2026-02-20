@@ -50,7 +50,7 @@ public abstract class Item : MonoBehaviour
             {
                 Enemigo e = enemigo.GetComponent<Enemigo>();
                 if (e != null)
-                    e.RecibirDaño(daño);
+                    e.RecibirDaño(daño, direccion);
             }
         }
     }
