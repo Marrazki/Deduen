@@ -799,6 +799,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPrefab: {fileID: 1460291856221510938, guid: 79bd47efcdc9267498489037640f464c, type: 3}
   contentPanel: {fileID: 4903551970519712903}
+  itemDescription: {fileID: 490190854133749454}
+  image: {fileID: 21300000, guid: dd3631e297d7ef341bfc48751be7ca9d, type: 3}
+  quantity: 1
+  title: Sword
+  description: Cuts things
 --- !u!1 &4341463646286714150
 GameObject:
   m_ObjectHideFlags: 0
@@ -984,6 +989,7 @@ GameObject:
   - component: {fileID: 6767472987516272531}
   - component: {fileID: 475220684393137633}
   - component: {fileID: 6479957673186466402}
+  - component: {fileID: 490190854133749454}
   m_Layer: 5
   m_Name: InventoryDescription
   m_TagString: Untagged
@@ -1096,6 +1102,21 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &490190854133749454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4742279025666038626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a227ee9851f87364bae23a5f75508885, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemImage: {fileID: 559546179107508202}
+  title: {fileID: 4119918516530245904}
+  description: {fileID: 580887485385268878}
 --- !u!1 &6243072272622286231
 GameObject:
   m_ObjectHideFlags: 0
