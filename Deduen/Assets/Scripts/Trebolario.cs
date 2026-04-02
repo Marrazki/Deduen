@@ -8,6 +8,10 @@ public class Trebolario : MonoBehaviour
     public int trebolesPlantados;
     public float tiempoFarmeo = 3; // Tiempo en segundos para generar tréboles automáticamente
 
+    [Header("Imagenes UI")]
+    public GameObject imagenTrebol4Hojas;
+    [SerializeField] private GameObject padreTreboles;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -37,6 +41,11 @@ public class Trebolario : MonoBehaviour
             Debug.Log("Plantaste un trébol");
             trebolesPlantados++;
             trebolesCuatroHojas--;
+            // Instanciar la imagen del trébol de cuatro hojas en el padre
+            float xPos = Random.Range(-170f, 170f); // Ajusta el rango según tus necesidades
+            float yPos = Random.Range(-170f, 170f); // Ajusta el rango según tus necesidades
+            GameObject nuevoTrebol = Instantiate(imagenTrebol4Hojas, new Vector3(xPos, yPos, 0), Quaternion.identity);
+            nuevoTrebol.transform.SetParent(padreTreboles.transform, false);
         }
     }
     public void ObtenerTrebol()
