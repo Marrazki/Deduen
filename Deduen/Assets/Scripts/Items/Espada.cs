@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 
-public class Espada : Item
+public class Espada : ItemPropio
 {
     public Animator animator; // Referencia al Animator para reproducir la animación de ataque
     private void Start()
     {
-        daño = 5;
+        danio = 5;
         rango = 1.5f;
         cooldown = 1f;
         anguloAtaque = 90f; // semicírculo

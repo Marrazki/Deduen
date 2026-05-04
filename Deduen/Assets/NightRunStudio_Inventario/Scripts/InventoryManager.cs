@@ -29,4 +29,9 @@ public class InventoryManager : MonoBehaviour
             menuActivated = true;
         }
     }
+    public void AddItem(string itemName, int quantity, Sprite itemSprite)
+    {
+        // Aquí puedes agregar la lógica para añadir el item al inventario
+        Debug.Log("Item agregado: " + itemName + " cantidad: " + quantity + " itemSprite: " + itemSprite);
+    }
 }

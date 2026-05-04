@@ -1,8 +1,8 @@
-public class Hacha : Item
+public class Hacha : ItemPropio
 {
     private void Start()
     {
-        daño = 10;
+        danio = 10;
         rango = 1f;
         cooldown = 1.5f;
         anguloAtaque = 90f;

@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public abstract class Item : MonoBehaviour
+public abstract class ItemPropio : MonoBehaviour
 {
     [Header("Stats")]
-    public int daño;
+    public int danio;
     public float rango;
     public float cooldown;
     public float anguloAtaque = 90f; // 90 = semicírculo
@@ -37,7 +37,7 @@ public abstract class Item : MonoBehaviour
 
     protected virtual void Ataque()
     {
-        Debug.Log("¡Ataque realizado! Daño: " + daño);
+        Debug.Log("¡Ataque realizado! Daño: " + danio);
         Vector2 centro = transform.parent.position;
         Collider2D[] enemigos = Physics2D.OverlapCircleAll(centro, rango, capaEnemigos);
 
@@ -50,7 +50,7 @@ public abstract class Item : MonoBehaviour
             {
                 Enemigo e = enemigo.GetComponent<Enemigo>();
                 if (e != null)
-                    e.RecibirDaño(daño, direccion);
+                    e.RecibirDaño(danio, direccion);
             }
         }
     }
