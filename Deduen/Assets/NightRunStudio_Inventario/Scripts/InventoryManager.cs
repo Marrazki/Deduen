@@ -7,6 +7,7 @@ public class InventoryManager : MonoBehaviour
 {
     public GameObject InvenoryMenu;
     private bool menuActivated;
+    public ItemSlot[] itemSlot;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -31,7 +32,13 @@ public class InventoryManager : MonoBehaviour
     }
     public void AddItem(string itemName, int quantity, Sprite itemSprite)
     {
-        // Aquí puedes agregar la lógica para añadir el item al inventario
-        Debug.Log("Item agregado: " + itemName + " cantidad: " + quantity + " itemSprite: " + itemSprite);
+        for (int i = 0; i < itemSlot.Length; i++)
+        {
+            if (itemSlot[i].isFull == false)
+            { 
+                itemSlot[i].AddItem(itemName, quantity, itemSprite);
+                return;
+            }
+        }
     }
 }
