@@ -8,6 +8,7 @@ public class InventoryManager : MonoBehaviour
     public GameObject InvenoryMenu;
     private bool menuActivated;
     public ItemSlot[] itemSlot;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -39,6 +40,14 @@ public class InventoryManager : MonoBehaviour
                 itemSlot[i].AddItem(itemName, quantity, itemSprite);
                 return;
             }
+        }
+    }
+    public void DeselectAllSlots()
+    {
+        for (int i = 0; i < itemSlot.Length; i++)
+        {
+            itemSlot[i].selectedShader.SetActive(false);
+            itemSlot[i].thisItemSelected = false;
         }
     }
 }
