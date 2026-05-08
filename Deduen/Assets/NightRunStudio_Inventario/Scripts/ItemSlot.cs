@@ -15,6 +15,8 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     public string itemDescription;
     public Sprite emptySprite;
 
+    [SerializeField]
+    private int maxNumberOfItems;
     //=======ITEM SLOT======//
     [SerializeField]
     private TMP_Text quantityText;
@@ -37,19 +39,41 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     {
         inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
     }
-    public void AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
-    { 
+    public int AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
+    {
+        //Chack to see if the slot is alredy full
+        if (isFull)
+            return quantity;
+
+        //Update Name
         this.itemName = itemName;
-        this.quantity = quantity;
+
+        //Update Image
         this.itemSprite = itemSprite;
-        this.itemDescription = itemDescription;
-        isFull = true;
-
-        quantityText.text = quantity.ToString();
-        quantityText.enabled = true;
         itemImage.sprite = itemSprite;
-    }
 
+        //Update Description
+        this.itemDescription = itemDescription;
+
+        //Update quantity
+        this.quantity += quantity;
+        if (this.quantity >= maxNumberOfItems)
+        {
+            quantityText.text = maxNumberOfItems.ToString();
+            quantityText.enabled = true;
+            isFull = true;
+
+            //Return left over items
+            int extraItems = this.quantity - maxNumberOfItems;
+            this.quantity = maxNumberOfItems;
+            return extraItems;
+        }
+        //Update quantity text
+        quantityText.text = this.quantity.ToString();
+        quantityText.enabled = true;
+
+        return 0;
+    }
     public void OnPointerClick(PointerEventData eventData)
     {
         if (eventData.button == PointerEventData.InputButton.Left)
@@ -71,13 +95,13 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         itemDescriptionText.text = itemDescription;
         itemDescriptionImage.sprite = itemSprite;
         if (itemDescriptionImage.sprite == null)
-        { 
+        {
             itemDescriptionImage.sprite = emptySprite;
         }
 
     }
     public void OnRightClick()
-    { 
-    
+    {
+
     }
 }

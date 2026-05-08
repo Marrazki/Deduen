@@ -25,8 +25,11 @@ public class Item : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            inventoryManager.AddItem(itemName,quantity,sprite,itemDescription);
+            int leftOverItem = inventoryManager.AddItem(itemName,quantity,sprite,itemDescription);
+            if (leftOverItem <= 0)
             Destroy(gameObject);
+            else
+                quantity = leftOverItem;
         }
     }
 }
