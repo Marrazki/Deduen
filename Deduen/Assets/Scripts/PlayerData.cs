@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class PlayerData : MonoBehaviour
 {
-    public int vida, vidaMax, lvl, xp;
+    public int vida, vidaMax, aura, aurilla;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         vida = 10;
         vidaMax = 10;
-        lvl = 1;
-        xp = 0;
+        aura = 1;
+        aurilla = 0;
     }
 
     // Update is called once per frame
@@ -18,14 +18,14 @@ public class PlayerData : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.H))
         {
-            RecibirDaño(2); // Simula recibir 2 puntos de daño al presionar 'H'
+            RecibirDanio(2); // Simula recibir 2 puntos de daño al presionar 'H'
         }
-            if (Input.GetKeyDown(KeyCode.J))
+        if (Input.GetKeyDown(KeyCode.J))
         {
-                GanarXP(5); // Simula ganar 5 XP al presionar 'J'
+            GanarAurilla(5); // Simula ganar 5 aurilla al presionar 'J'
         }
     }
-    public void RecibirDaño(int daño)
+    public void RecibirDanio(int daño)
     {
         vida -= daño;
         Debug.Log("¡Has recibido " + daño + " de daño! Vida restante: " + vida);
@@ -34,22 +34,35 @@ public class PlayerData : MonoBehaviour
             Morir();
         }
     }
-    public void GanarXP(int cantidadXp)
+    public void Curar(int ps)
     {
-        xp += cantidadXp;
-        Debug.Log("¡Has ganado " + cantidadXp + " XP! Total XP: " + xp);
+        if (vida + ps >= vidaMax)
+        {
+            vida = vidaMax;
+             Debug.Log("¡Tu vida está al máximo! Vida restante: " + vida);
+        }
+        else
+        {
+            vida += ps;
+            Debug.Log("¡Has recibido " + ps + " de vida! Vida restante: " + vida);
+        }
+    }
+    public void GanarAurilla(int cantidadAurilla)
+    {
+        aurilla += cantidadAurilla;
+        Debug.Log("¡Has ganado " + cantidadAurilla + " aurilla! Total aurilla: " + aurilla);
         VerificarNivel();
     }
     void VerificarNivel()
     {
-        int xpNecesaria = lvl * 10; // Ejemplo: cada nivel requiere 10 XP más que el anterior
-        if (xp >= xpNecesaria)
+        int aurillaNecesaria = aura * 10; // Ejemplo: cada nivel requiere 10 aurilla más que el anterior
+        if (aurilla >= aurillaNecesaria)
         {
-            lvl++;
+            aura++;
             vida = vida + 3;
             vidaMax = vidaMax + 3;
-            xp -= xpNecesaria; // Restar el XP necesario para subir de nivel
-            Debug.Log("¡Has subido al nivel " + lvl + "! XP restante: " + xp);
+            aurilla -= aurillaNecesaria; // Restar el aurilla necesario para subir de nivel
+            Debug.Log("¡Has subido al nivel " + aura + "! aurilla restante: " + aurilla);
         }
     }
     void Morir()

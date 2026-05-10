@@ -9,6 +9,8 @@ public class InventoryManager : MonoBehaviour
     private bool menuActivated;
     public ItemSlot[] itemSlot;
 
+    public ItemSO[] itemsSOs;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -29,6 +31,17 @@ public class InventoryManager : MonoBehaviour
             //Time.timeScale = 0f;  //Para el tiempo
             InvenoryMenu.SetActive(true);
             menuActivated = true;
+        }
+    }
+    public void UseItem(string itemName)
+    {
+        for (int i = 0; i < itemsSOs.Length; i++)
+        {
+            if(itemsSOs[i].itemName == itemName)
+            {
+                itemsSOs[i].Use();
+                break;
+            }
         }
     }
     public int AddItem(string itemName, int quantity, Sprite itemSprite,string itemDescription)
