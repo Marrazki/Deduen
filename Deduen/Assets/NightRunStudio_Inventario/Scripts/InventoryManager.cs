@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 
 public class InventoryManager : MonoBehaviour
@@ -33,16 +34,17 @@ public class InventoryManager : MonoBehaviour
             menuActivated = true;
         }
     }
-    public void UseItem(string itemName)
+    public bool UseItem(string itemName)
     {
         for (int i = 0; i < itemsSOs.Length; i++)
         {
             if(itemsSOs[i].itemName == itemName)
             {
-                itemsSOs[i].Use();
-                break;
+                bool usable = itemsSOs[i].UseItem();
+                return usable;
             }
         }
+            return false;
     }
     public int AddItem(string itemName, int quantity, Sprite itemSprite,string itemDescription)
     {
