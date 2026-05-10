@@ -209,7 +209,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
 --- !u!4 &2191444
 Transform:
@@ -221,8 +221,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.79, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 429560822}
   m_Father: {fileID: 0}
@@ -241,7 +241,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Item
   itemName: Llave
   quantity: 3
-  sprite: {fileID: 1716489532362050864, guid: efe3d4f73bfdcaf4e97b6a951c621388, type: 3}
+  sprite: {fileID: 6238157516676492919, guid: a638b7939b56bb14c8edcc33890ba638, type: 3}
   itemDescription: "Est\xE1 t\xF3 guapa y te permite abrir puertas, bueno, una"
 --- !u!1001 &28927494
 PrefabInstance:
@@ -1897,7 +1897,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2191444}
@@ -4449,7 +4449,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Item
   itemName: Coffee
   quantity: 2
-  sprite: {fileID: 7303735505563303112, guid: df6878c62a612cc4ab835926685393b7, type: 3}
+  sprite: {fileID: 21300000, guid: 43afb7e584979ff47a658f7b6b5e702b, type: 3}
   itemDescription: "Biende cafe\xEDna por 0 calor\xEDas"
 --- !u!50 &1284443627
 Rigidbody2D:
@@ -4522,7 +4522,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
 --- !u!4 &1284443629
 Transform:
@@ -4534,8 +4534,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.26, y: 1.84, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2076253035}
   m_Father: {fileID: 0}
@@ -4682,7 +4682,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Item
   itemName: Llave
   quantity: 8
-  sprite: {fileID: 1716489532362050864, guid: efe3d4f73bfdcaf4e97b6a951c621388, type: 3}
+  sprite: {fileID: 6238157516676492919, guid: a638b7939b56bb14c8edcc33890ba638, type: 3}
   itemDescription: "Est\xE1 t\xF3 guapa y te permite abrir puertas, bueno, una"
 --- !u!50 &1411772871
 Rigidbody2D:
@@ -4755,7 +4755,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
 --- !u!4 &1411772873
 Transform:
@@ -4767,8 +4767,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.79, y: 1.84, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1758196636}
   m_Father: {fileID: 0}
@@ -5621,7 +5621,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1411772873}
@@ -6210,7 +6210,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1284443629}
@@ -6264,7 +6264,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7303735505563303112, guid: df6878c62a612cc4ab835926685393b7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 43afb7e584979ff47a658f7b6b5e702b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

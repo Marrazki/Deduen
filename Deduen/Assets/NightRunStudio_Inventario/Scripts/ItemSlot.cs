@@ -84,7 +84,6 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         if (eventData.button == PointerEventData.InputButton.Right)
         {
             OnRightClick();
-
         }
     }
     public void OnLeftClick()
@@ -126,6 +125,31 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
     public void OnRightClick()
     {
+        //Create a new item
+        GameObject itemToDrop = new GameObject(itemName);
+        Item newItem = itemToDrop.AddComponent<Item>();
+        newItem.quantity = 1;
+        newItem.itemName = itemName;
+        newItem.sprite = itemSprite;
+        newItem.itemDescription = itemDescription;
 
+        //Create and modify the sprite renderer
+        SpriteRenderer sr = itemToDrop.AddComponent<SpriteRenderer>();
+        sr.sprite = itemSprite;
+        sr.sortingOrder = 5;
+        sr.sortingLayerName = "Ground";
+
+        //Add a box collider
+        itemToDrop.AddComponent<BoxCollider2D>();
+
+        //Set the position of the item to drop
+        itemToDrop.transform.position = GameObject.FindWithTag("Player").transform.position + new Vector3(2f, 0, 0);
+        itemToDrop.transform.localScale = new Vector3(2f, 2f, 2f);
+
+        //Remove the item from the inventory
+        this.quantity--;
+        quantityText.text = this.quantity.ToString();
+        if (this.quantity <= 0)
+            EmptySlot();
     }
 }
